@@ -1,0 +1,23 @@
+<div ng-controller="EditRecordCtrl">
+	<form>
+		<div class="form-group">
+			<label>Time</label>
+			<input class="form-control" ng-model="record.time" />
+		</div>
+		
+		<div class="form-group">
+			<label>Duration</label>
+			<input class="form-control" ng-model="record.duration"/>
+		</div>
+		
+		<div class="form-group">
+			<label>Intensity</label>
+			<input class="form-control" ng-model="record.intensity"/>
+		</div>
+		
+		<!-- Omogućiti promenu prikazanih, vezanih korisnika i aktivnosti -->
+		
+		<button class="btn btn-secondary" ng-click="doEdit()">Edit</button>
+	</form>
+
+</div>

@@ -1,0 +1,42 @@
+<div ng-controller="RecordsCtrl">
+	<h1>Records</h1>
+	
+	<form>
+		<div class="form-group">
+			<label for="rtime">Time</label>
+			<input class="form-control" id="rtime" ng-model="newRecord.time" />
+		</div>
+		<div class="form-group">
+			<label for="rduration">Duration</label>
+			<input class="form-control" id="rduration" ng-model="newRecord.duration"/>
+		</div>
+		<div class="form-group">
+			<label for="rintensity">Intensity</label>
+			<input class="form-control" id="rintensity" ng-model="newRecord.intensity"/>
+		</div>
+		
+		<!-- TODO: Omogućiti odabir korisnika i aktivnosti -->
+		
+		<button class="btn btn-primary" ng-click="doAdd()">Add</button>
+	</form>
+	
+	
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Time</th>
+				<th>Duration</th>
+				<th>Intensity</th>
+				<th>Activity</th>
+				<th>User</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<!-- TODO: Prikazati obeležja, kako beleške tako i entiteta za koje je vezana + dugme -->
+				
+			</tr>
+		</tbody>
+	</table>
+</div>
