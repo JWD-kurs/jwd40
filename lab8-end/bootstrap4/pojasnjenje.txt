@@ -1,0 +1,92 @@
+-- Primer containers-grid.html: --
+
+Primer koji bi trebalo da pojasni osnove rada sa bootstrap bibliotekom, i grid sistem koji omogućava da front-end reaguje na veličinu ekrana.
+Kao što se može videti, bootstrap očekuje da se uvedu dva meta taga - da se postavi charset na utf-8 i da se definiše viewport, koji daje browser-u instrukcije kako da se kontroliše veličina stranice i skaliranje (zoom). 
+
+Potom, uvlači se bootstrap css fajl. Pri dnu html-a se uvlače jquery i bootstrap js fajlovi, kako bi se učitavanje stranice činilo bržim.
+Pored toga, u style tagu se definišu stilovi koji bi trebalo vizuelno da pomognu u objašnjenju primera.
+
+
+Grid sistem:
+
+Grid sistem omogućava definisanje različitog raspored html elemenata s obzirom na veličinu ekrana. Grid sistem radi isključivo u okviru kontejnera - html elementa koji ima klasu "container" ili klasu "container-fluid".
+
+Običan kontejner u zavisnosti od veličine ekrana može da ima svega nekoliko veličina (ako se ne računa xs veličina ekrana), dok ostatak prostora pripadne padding-u. To omogućava dizajnerima da prilikom dizajniranja vode računa kako će aplikacija izgledati za samo te veličine.
+
+Fluid kontejner se uvek širi sa veličinom ekrana, te se i sadržaj unutar njega uvek prilagođava veličini ekrana.
+
+
+<div class="container"> 
+</div>
+
+<div class="container-fluid"> 
+</div>
+
+Grid sistem definiše mrežu koja se sastoji od redova i kolona (kao tabela). Bootstrap omogućava da definišete logičke redove (logičke jer ne znači da će svi elementi u redu biti i fizički u jednom redu prilikom prikaza), pomoću html elementa sa klasom "row". U jednom logičkom redu ima 12 kolona.
+
+<div class="container"> 
+
+	<div class="row"> 
+		...
+	</div>
+	
+	<div class="row">
+		... 
+	</div>
+</div>
+
+
+Elementima u okviru reda se zadaje širina u broju kolona, za određenu velilčinu ekrana. Pogledati veličine ekrana, veličine kontejenera, i važeće atribute za kolone u tom trenutku, na sledećem linku: https://getbootstrap.com/docs/4.0/layout/grid/#grid-options
+
+Upravljanje veličinom u kolonama se svodi na sledeći princip:
+- jedan red ima 12 kolona
+- za elemente u okviru reda je moguće definisati veličinu u broju kolona (ispod označeno slovom n), po veličini ekrana (xs, sm, md, lg, xl)
+  - col(-xs)-n
+  - col-sm-n
+  - col-md-n
+  - col-lg-n
+  - col-xl-n
+- ako se za neku veličinu ekrana ne definiše širina u kolonama, važi širina definisana za "najbližu" manju veličinu za koju jeste definisana
+- ako je broj kolona veći od 12, doći će do razlaganja reda u više fizičkih redova
+- ako je za neke elemente definisano samo da su kolona (stavljeno je da je klasa samo "col"), oni imaju veličinu relativnu u odnosu na ostatak elemenata u redu
+
+
+-- Primer containers-grid.html: --
+
+U zavisnosti od veličine ekrana, ponekad postoji potreba da se određeni elementi sakriju od korisnika. Na primer, kada je veličina ekrana xs, možda postoji želja da se korisniku prikažu samo bitne informacije, kako bi se korisnik lakše i brže snašao. U tu svrhu, bootstrap nudi mogućnost da se za elemente definiše u kom trenutku je css display atribut none, a u kom block.
+
+Skrivanje se dešava po sledećem pravilu:
+- podrazumevano display ima vrednost block
+- u određenoj veličini, vrednost se može promeniti na none:
+  - d(-xs)-none
+  - d-sm-none
+  - d-md-none
+  - d-lg-none
+  - d-xl-none
+- takođe, u određenoj veličini, vrednost se može promeniti na block:
+  - d(-xs)-block
+  - d-sm-block
+  - d-md-block
+  - d-lg-block
+  - d-xl-block
+- ako za neku veličinu vrednost nije podešena, važi vrednost definisana za prvu manju za koju jeste, ili default-na vrednost 
+
+U alfa verziji bootstrapa 4 je ovaj mehanizam bio možda malo intuitivniji, pa stoga možete pogledati sledeći link:
+https://medium.com/wdstack/bootstrap-4-hidden-visible-dd969a4c5854
+
+
+-- Primer navbar-form-table-example.html --
+
+Primer male aplikacije kreirane pomoću bootstrap-a:
+- Za pravljenje i stilizovanje navigacionog bar-a možete pogledati link: https://getbootstrap.com/docs/4.0/components/navbar/
+- Za pravljenje i stilizovanje tabele možete pogledati link: https://getbootstrap.com/docs/4.0/content/tables/
+- Za pravljenje i stilizovanje formi možete pogledati link: https://getbootstrap.com/docs/4.0/components/forms/
+- Za pravljenje i stilizovanje dugmadi možete pogledati link: https://getbootstrap.com/docs/4.0/components/buttons/
+
+U verziji 4 bootstrapa su izbacili ikonice, a kako su one često potrebne u izradi aplikacija, u primer je uvučena fontawesome biblioteka, pomoću link taga: <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+Ikonice koje su dostupne možete pogledati na linku: https://fontawesome.com/v4.7.0/icons/
+
+
+
+
