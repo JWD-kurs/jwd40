@@ -1,0 +1,1 @@
+var wafepaApp = angular.module("wafepaApp", ['ngRoute']);
